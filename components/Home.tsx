@@ -1,4 +1,5 @@
 import { AboutDesktop, AboutMobile } from "./About"
+import { ComponentsDesktop, ComponentsMobile } from "./Components"
 import { ProjectsDesktop, ProjectsMobile } from "./Projects"
 export const HomeDesktop = () => {
   return (
@@ -6,6 +7,7 @@ export const HomeDesktop = () => {
       <main className="mx-auto mb-24 flex w-[565px] flex-col gap-12 pt-26">
         <AboutDesktop />
         <ProjectsDesktop />
+        <ComponentsDesktop />
       </main>
       <div className="bottom-scroll-mask pointer-events-none" aria-hidden="true" />
       <div className="top-scroll-mask pointer-events-none" aria-hidden="true" />
