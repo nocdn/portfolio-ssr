@@ -1,27 +1,27 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter, JetBrains_Mono } from "next/font/google";
-import localFont from "next/font/local";
-import "./globals.css";
+import type { Metadata } from "next"
+import { Geist, Geist_Mono, Inter, JetBrains_Mono } from "next/font/google"
+import localFont from "next/font/local"
+import "./globals.css"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-});
+})
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-});
+})
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-});
+})
 
 const jetBrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
-});
+})
 
 const ioskeleyMono = localFont({
   src: [
@@ -33,27 +33,43 @@ const ioskeleyMono = localFont({
     { path: "./fonts/IoskeleyMono-ExtraBold.woff2", weight: "800" },
   ],
   variable: "--font-ioskeley-mono",
-});
+})
 
-const isDevelopment = process.env.NODE_ENV === "development";
+const switzer = localFont({
+  src: "../public/fonts/Switzer-Medium.woff2",
+  variable: "--font-switzer",
+  display: "swap",
+  preload: true,
+  fallback: ["system-ui", "sans-serif"],
+})
+
+const ppNeueMontreal = localFont({
+  src: "../public/fonts/PPNeueMontreal-Medium.woff2",
+  variable: "--font-pp-neue-montreal",
+  display: "swap",
+  preload: true,
+  fallback: ["system-ui", "sans-serif"],
+})
+
+const isDevelopment = process.env.NODE_ENV === "development"
 
 export const metadata: Metadata = {
-  title: isDevelopment ? "{{project-name}} (dev)" : "{{project-name}}",
+  title: isDevelopment ? "portfolio-ssr (dev)" : "portfolio-ssr",
   description: "Leaner and faster version of my portfolio",
-};
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${jetBrainsMono.variable} ${ioskeleyMono.variable} bg-background`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${jetBrainsMono.variable} ${ioskeleyMono.variable} ${switzer.variable} ${ppNeueMontreal.variable} bg-background antialiased`}
       >
         {children}
       </body>
     </html>
-  );
+  )
 }
