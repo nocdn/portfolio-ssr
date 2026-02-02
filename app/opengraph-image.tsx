@@ -1,5 +1,9 @@
 import { ImageResponse } from "next/og"
 
+export const alt = "Bartosz Bak - Design Engineer"
+export const size = { width: 1200, height: 630 }
+export const contentType = "image/png"
+
 async function loadGoogleFont(font: string, text: string, weight: number = 400) {
   const url = `https://fonts.googleapis.com/css2?family=${font}:wght@${weight}&text=${encodeURIComponent(text)}`
   const css = await (await fetch(url)).text()
@@ -15,19 +19,19 @@ async function loadGoogleFont(font: string, text: string, weight: number = 400) 
   throw new Error("Failed to load font data")
 }
 
-export async function GET() {
+export default async function Image() {
   const nameText = "Bartosz Bak"
   const titleText = "Design Engineer"
 
   const [interSemiBold, interRegular] = await Promise.all([
     loadGoogleFont("Inter", nameText, 600),
-    loadGoogleFont("Inter", titleText, 400),
+    loadGoogleFont("Inter", titleText, 500),
   ])
 
   return new ImageResponse(
     <div
       style={{
-        background: "#0a0a0a",
+        background: "#fafafa",
         width: "100%",
         height: "100%",
         display: "flex",
@@ -44,8 +48,8 @@ export async function GET() {
       >
         <div
           style={{
-            color: "white",
-            fontSize: 64,
+            color: "#0a0a0a",
+            fontSize: 72,
             fontFamily: "Inter",
             fontWeight: 600,
           }}
@@ -54,10 +58,10 @@ export async function GET() {
         </div>
         <div
           style={{
-            color: "#a1a1aa",
-            fontSize: 32,
+            color: "#71717a",
+            fontSize: 40,
             fontFamily: "Inter",
-            fontWeight: 400,
+            fontWeight: 500,
             marginTop: 12,
           }}
         >
@@ -80,7 +84,7 @@ export async function GET() {
           height="64"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="white"
+          stroke="#0a0a0a"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -92,8 +96,7 @@ export async function GET() {
       </div>
     </div>,
     {
-      width: 1200,
-      height: 630,
+      ...size,
       fonts: [
         {
           name: "Inter",

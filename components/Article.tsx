@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 type IconProps = {
   size?: number | string
   strokeWidth?: number
@@ -61,7 +63,7 @@ export function Article({
   disabled?: boolean
 }) {
   return (
-    <a
+    <Link
       href={href}
       className={`font-inter flex w-full justify-between rounded-lg border border-gray-200 p-3 text-[16px] leading-normal ${
         disabled ? "cursor-not-allowed" : "cursor-pointer hover:bg-gray-100/55"
@@ -81,6 +83,6 @@ export function Article({
           </span>
         </div>
       </div>
-    </a>
+    </Link>
   )
 }
