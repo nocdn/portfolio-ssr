@@ -1,6 +1,7 @@
 import { AboutDesktop, AboutMobile } from "./About"
 import { ComponentsDesktop, ComponentsMobile } from "./Components"
 import { ProjectsDesktop, ProjectsMobile } from "./Projects"
+import { WritingDesktop } from "./Writing"
 export const HomeDesktop = () => {
   return (
     <div>
@@ -8,6 +9,7 @@ export const HomeDesktop = () => {
         <AboutDesktop />
         <ProjectsDesktop />
         <ComponentsDesktop />
+        <WritingDesktop />
       </main>
       <div className="bottom-scroll-mask pointer-events-none" aria-hidden="true" />
       <div className="top-scroll-mask pointer-events-none" aria-hidden="true" />

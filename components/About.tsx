@@ -18,12 +18,12 @@ export const AboutDesktop = () => {
           href="https://x.com/nocdns"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[18.5px] group-hover:text-blue-600"
+          className="text-[18.5px] text-blue-600"
         >
           Twitter
         </a>
         , reach me via <br />
-        <a href="mailto:contact@bartoszbak.org" className="group-hover:text-blue-600">
+        <a href="mailto:contact@bartoszbak.org" className="text-blue-600">
           email
         </a>{" "}
         or see my other code on{" "}
@@ -31,7 +31,7 @@ export const AboutDesktop = () => {
           href="https://github.com/nocdn"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-lg group-hover:text-blue-600"
+          className="text-lg text-blue-600"
         >
           GitHub
         </a>

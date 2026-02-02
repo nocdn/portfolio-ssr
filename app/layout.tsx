@@ -54,8 +54,38 @@ const ppNeueMontreal = localFont({
 const isDevelopment = process.env.NODE_ENV === "development"
 
 export const metadata: Metadata = {
-  title: isDevelopment ? "portfolio-ssr (dev)" : "portfolio-ssr",
-  description: "Leaner and faster version of my portfolio",
+  title: isDevelopment ? "Bartosz Bak (dev)" : "Bartosz Bak",
+  description: "Aspiring design engineer based in the UK",
+  icons: {
+    icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: "Bartosz Bak",
+    description: "Aspiring design engineer based in the UK",
+    url: "https://bartoszbak.org",
+    siteName: "Bartosz Bak",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://bartoszbak.org/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Bartosz Bak - Aspiring design engineer based in the UK",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@nocdns",
+    creator: "@nocdns",
+    title: "Bartosz Bak",
+    description: "Aspiring design engineer based in the UK",
+    images: ["https://bartoszbak.org/og.png"],
+  },
+  alternates: {
+    canonical: "https://bartoszbak.org",
+  },
 }
 
 export default function RootLayout({
@@ -63,8 +93,25 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Bartosz Bak",
+    url: "https://bartoszbak.org",
+    description: "Aspiring design engineer based in the UK",
+    image: "https://bartoszbak.org/og.png",
+  }
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${jetBrainsMono.variable} ${ioskeleyMono.variable} ${switzer.variable} ${ppNeueMontreal.variable} bg-background antialiased`}
       >
