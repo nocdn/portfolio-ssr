@@ -50,6 +50,7 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+  --color-paragraph: var(--paragraph);
 }
 
 :root {
@@ -87,6 +88,7 @@
   --sidebar-ring: oklch(0.708 0 0);
   --color-preview-bg: lab(100% 0 0);
   --color-preview-border: lab(91.996% -0.0000298023 0.0000119209);
+  --paragraph: #424242;
 }
 
 .dark {
@@ -213,6 +215,58 @@ code {
   .dark .top-scroll-mask {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(20, 20, 20, 1) 80%);
   }
+}
+
+.masked-overflow-y {
+  --mask-height: 48px;
+  --scroll-buffer: 1rem;
+
+  mask-image:
+    linear-gradient(to bottom, transparent, var(--foreground) 90%),
+    linear-gradient(to top, transparent 0%, var(--foreground) 100%),
+    linear-gradient(var(--foreground), var(--foreground));
+
+  mask-size:
+    100% var(--top-mask-height),
+    100% var(--bottom-mask-height),
+    100% 100%;
+
+  mask-position:
+    0 0,
+    0 100%,
+    0 0;
+
+  mask-repeat: no-repeat, no-repeat, no-repeat;
+  mask-composite: exclude;
+
+  animation-name: show-top-mask, hide-bottom-mask;
+  animation-timeline: scroll(self);
+  animation-range:
+    0 var(--scroll-buffer),
+    calc(100% - var(--scroll-buffer)) 100%;
+  animation-fill-mode: both;
+}
+
+@keyframes show-top-mask {
+  from { --top-mask-height: 0px; }
+  to { --top-mask-height: var(--mask-height); }
+}
+
+@keyframes hide-bottom-mask {
+  from { --bottom-mask-height: var(--mask-height); }
+  to { --bottom-mask-height: 0px; }
+}
+
+@property --top-mask-height {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --bottom-mask-height {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 48px;
 }
 
 ::selection {

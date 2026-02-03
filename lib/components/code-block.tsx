@@ -1,12 +1,14 @@
-import type { BundledLanguage } from "shiki";
-import { codeToHtml } from "shiki";
+import { cn } from "@/lib/utils"
+import type { BundledLanguage } from "shiki"
+import { codeToHtml } from "shiki"
 
 interface CodeBlockProps {
-  children: string;
-  lang: BundledLanguage;
+  children: string
+  lang: BundledLanguage
+  className?: string
 }
 
-export async function CodeBlock({ children, lang }: CodeBlockProps) {
+export async function CodeBlock({ children, lang, className }: CodeBlockProps) {
   const html = await codeToHtml(children, {
     lang,
     themes: {
@@ -14,12 +16,15 @@ export async function CodeBlock({ children, lang }: CodeBlockProps) {
       dark: "github-dark",
     },
     defaultColor: false,
-  });
+  })
 
   return (
     <div
-      className="font-ioskeley-mono text-sm [&_pre]:bg-transparent [&_pre]:m-0 [&_pre]:p-0"
+      className={cn(
+        "font-ioskeley-mono overflow-auto text-sm [&_pre]:m-0 [&_pre]:bg-transparent [&_pre]:p-0",
+        className
+      )}
       dangerouslySetInnerHTML={{ __html: html }}
     />
-  );
+  )
 }

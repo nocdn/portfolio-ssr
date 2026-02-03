@@ -39,7 +39,7 @@ function CardImage({ card }: { card: ComponentCard }) {
           alt={card.alt}
           width={200}
           height={100}
-          className={`${className} px-8 py-4`}
+          className={`${className} bg-white px-8 py-4`}
           loading="lazy"
           priority={false}
         />
