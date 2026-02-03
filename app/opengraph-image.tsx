@@ -1,4 +1,6 @@
 import { ImageResponse } from "next/og"
+import { readFile } from "node:fs/promises"
+import { join } from "node:path"
 
 export const alt = "Bartosz Bak - Design Engineer"
 export const size = { width: 1200, height: 630 }
@@ -23,9 +25,9 @@ export default async function Image() {
   const nameText = "Bartosz Bak"
   const titleText = "Design Engineer"
 
-  const [interSemiBold, interRegular] = await Promise.all([
+  const [interSemiBold, openRundeMedium] = await Promise.all([
     loadGoogleFont("Inter", nameText, 600),
-    loadGoogleFont("Inter", titleText, 500),
+    readFile(join(process.cwd(), "app/fonts/OpenRunde-Medium.otf")),
   ])
 
   return new ImageResponse(
@@ -60,7 +62,7 @@ export default async function Image() {
           style={{
             color: "#71717a",
             fontSize: 40,
-            fontFamily: "Inter",
+            fontFamily: "OpenRunde",
             fontWeight: 500,
             marginTop: 12,
           }}
@@ -69,19 +71,19 @@ export default async function Image() {
         </div>
       </div>
 
-      {/* Top right - Sprout SVG */}
+      {/* Bottom right - Sprout SVG */}
       <div
         style={{
           position: "absolute",
-          top: 60,
+          bottom: 60,
           right: 60,
           display: "flex",
         }}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="64"
-          height="64"
+          width="84"
+          height="84"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#0a0a0a"
@@ -105,10 +107,10 @@ export default async function Image() {
           weight: 600,
         },
         {
-          name: "Inter",
-          data: interRegular,
+          name: "OpenRunde",
+          data: openRundeMedium,
           style: "normal" as const,
-          weight: 400,
+          weight: 500,
         },
       ],
     }
