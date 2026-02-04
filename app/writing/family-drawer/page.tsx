@@ -1,5 +1,7 @@
 import { CodeBlock } from "@/lib/components/code-block"
 import { initialCode } from "./article-code"
+import { CodePreviewSwitch } from "./components/codePreviewSwitch"
+import { InitialDrawer } from "./components/initialDrawer"
 
 export default function FamilyDrawer() {
   return (
@@ -46,12 +48,14 @@ export default function FamilyDrawer() {
         The most important aspect of this whole component is the motion, no doubt about that, so
         with my first attempt, I ignored the icons, colours and typography and ended up with this:
       </p>
-      <CodeBlock
+      {/* <CodeBlock
         lang="javascript"
         className="border-shadow my-6 max-h-48 overflow-y-auto rounded-xl p-4"
       >
         {initialCode}
       </CodeBlock>
+      <InitialDrawer /> */}
+      <CodePreviewSwitch />
     </div>
   )
 }
