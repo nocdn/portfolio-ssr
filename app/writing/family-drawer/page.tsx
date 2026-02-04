@@ -48,14 +48,9 @@ export default function FamilyDrawer() {
         The most important aspect of this whole component is the motion, no doubt about that, so
         with my first attempt, I ignored the icons, colours and typography and ended up with this:
       </p>
-      {/* <CodeBlock
-        lang="javascript"
-        className="border-shadow my-6 max-h-48 overflow-y-auto rounded-xl p-4"
-      >
-        {initialCode}
-      </CodeBlock>
-      <InitialDrawer /> */}
-      <CodePreviewSwitch />
+      <CodePreviewSwitch code={initialCode} previewClassName="flex flex-col justify-end px-24 pb-4">
+        <InitialDrawer />
+      </CodePreviewSwitch>
     </div>
   )
 }

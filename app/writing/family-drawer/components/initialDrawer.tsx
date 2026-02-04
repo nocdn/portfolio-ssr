@@ -10,7 +10,7 @@ export const InitialDrawer = () => {
 
   const options = [
     <div className="flex flex-col gap-2" key={0}>
-      <p className="text-lg font-medium text-[#222222]">Private Key</p>
+      <p className="font-medium text-[#222222]">Private Key</p>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates dolorem fugit
         consequatur sint necessitatibus natus deserunt? Impedit deleniti libero necessitatibus, fuga
@@ -25,7 +25,7 @@ export const InitialDrawer = () => {
       </button>
     </div>,
     <div className="flex flex-col gap-2" key={1}>
-      <p className="text-lg font-medium text-[#222222]">Secret Recovery Phrase</p>
+      <p className="font-medium text-[#222222]">Secret Recovery Phrase</p>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid sint molestiae maxime
         harum ea nisi corporis a eligendi dolor illo eveniet doloremque aperiam est, ratione et
@@ -55,7 +55,7 @@ export const InitialDrawer = () => {
         bounce: 0,
         duration: 0.27,
       }}
-      className="overflow-hidden rounded-4xl border border-gray-200"
+      className="mt-auto overflow-hidden rounded-4xl border border-gray-200"
     >
       <div className="px-6 pt-6 pb-6 antialiased" ref={elementRef}>
         <AnimatePresence initial={false} mode="popLayout" custom={view}>
