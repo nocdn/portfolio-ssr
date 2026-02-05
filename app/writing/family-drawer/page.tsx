@@ -48,7 +48,7 @@ export default function FamilyDrawer() {
         The most important aspect of this whole component is the motion, no doubt about that, so
         with my first attempt, I ignored the icons, colours and typography and ended up with this:
       </p>
-      <CodePreviewSwitch code={initialCode} previewClassName="flex flex-col justify-end px-24 pb-4">
+      <CodePreviewSwitch code={initialCode} previewClassName="flex flex-col items-center justify-end pb-4">
         <InitialDrawer />
       </CodePreviewSwitch>
     </div>

@@ -50,7 +50,7 @@ export function CodePreviewSwitch({
         <button
           onMouseDown={() => setSelected("preview")}
           className={cn(
-            "w-full rounded-full py-2 transition-all duration-100 select-none active:scale-99",
+            "w-full cursor-pointer rounded-full py-2 transition-all duration-100 select-none active:scale-99",
             selected === "preview" ? "bg-[#323137] text-white" : "bg-[#E3E3E3]"
           )}
         >
@@ -59,7 +59,7 @@ export function CodePreviewSwitch({
         <button
           onMouseDown={() => setSelected("code")}
           className={cn(
-            "w-full rounded-full py-2 transition-all duration-100 select-none active:scale-99",
+            "w-full cursor-pointer rounded-full py-2 transition-all duration-100 select-none active:scale-99",
             selected === "code" ? "bg-[#323137] text-white" : "bg-[#E3E3E3]"
           )}
         >
@@ -68,7 +68,7 @@ export function CodePreviewSwitch({
       </div>
       <div id="content" className="h-96 overflow-auto">
         {selected === "preview" ? (
-          <div className={cn(previewClassName)}>{children}</div>
+          <div className={cn("h-full", previewClassName)}>{children}</div>
         ) : (
           <div
             className={cn(

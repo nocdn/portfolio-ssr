@@ -10,31 +10,29 @@ export const InitialDrawer = () => {
 
   const options = [
     <div className="flex flex-col gap-2" key={0}>
-      <p className="font-medium text-[#222222]">Private Key</p>
-      <p>
+      <p className="text-sm font-medium text-[#222222]">Private Key</p>
+      <p className="text-sm">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates dolorem fugit
         consequatur sint necessitatibus natus deserunt? Impedit deleniti libero necessitatibus, fuga
-        officiis autem consectetur. Accusantium magnam dolorum repellat, quo iure dolore. Libero
-        necessitatibus consequuntur quos culpa hic maiores illo amet?
+        officiis autem consectetur.
       </p>
       <button
-        className="mt-2 cursor-pointer rounded-xl border border-gray-200 px-4 py-2 transition-transform active:scale-95"
+        className="mt-2 cursor-pointer rounded-xl border border-gray-200 px-4 py-2 text-sm transition-transform active:scale-95"
         onClick={() => setView((currentView) => (currentView + 1) % options.length)}
       >
         Show Recovery Phrase
       </button>
     </div>,
     <div className="flex flex-col gap-2" key={1}>
-      <p className="font-medium text-[#222222]">Secret Recovery Phrase</p>
-      <p>
+      <p className="text-sm font-medium text-[#222222]">Secret Recovery Phrase</p>
+      <p className="text-sm">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid sint molestiae maxime
         harum ea nisi corporis a eligendi dolor illo eveniet doloremque aperiam est, ratione et
         officia consequuntur, atque error aut! Magni accusantium deleniti, eius laboriosam nihil
-        sunt. Corporis iusto doloremque ex explicabo commodi earum, nobis, aperiam fuga repellendus
-        soluta eos ipsum? Numquam sit vero aspernatur totam, quaerat reprehenderit repellendus?
+        sunt. Corporis iusto doloremque ex explicabo commodi earum, nobis.
       </p>
       <button
-        className="mt-2 cursor-pointer rounded-xl border border-gray-200 px-4 py-2 transition-transform active:scale-95"
+        className="mt-2 cursor-pointer rounded-xl border border-gray-200 px-4 py-2 text-sm transition-transform active:scale-95"
         onClick={() => setView((currentView) => (currentView + 1) % options.length)}
       >
         Show Private Key
@@ -55,7 +53,7 @@ export const InitialDrawer = () => {
         bounce: 0,
         duration: 0.27,
       }}
-      className="mt-auto overflow-hidden rounded-4xl border border-gray-200"
+      className="border-shadow mt-auto max-w-80 overflow-hidden rounded-4xl"
     >
       <div className="px-6 pt-6 pb-6 antialiased" ref={elementRef}>
         <AnimatePresence initial={false} mode="popLayout" custom={view}>
