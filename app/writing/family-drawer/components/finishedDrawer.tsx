@@ -1,33 +1,31 @@
 "use client"
 
-import { AnimatePresence, motion } from "motion/react"
-import { useMemo, useState } from "react"
-import useMeasure from "react-use-measure"
 import {
-  X,
-  Lock,
-  NotepadText,
-  TriangleAlert,
   Ban,
   FileKey2,
+  Lock,
+  NotepadText,
   RectangleEllipsis,
   ScanFace,
   ShieldCheck,
+  TriangleAlert,
+  X,
 } from "lucide-react"
+import { AnimatePresence, motion } from "motion/react"
+import { useMemo, useState } from "react"
+import useMeasure from "react-use-measure"
 
 // InitialView Component
 function InitialView({
   onViewKey,
   onViewRecovery,
-  onRemoveWallet,
 }: {
   onViewKey: () => void
   onViewRecovery: () => void
-  onRemoveWallet: () => void
 }) {
   return (
     <div className="flex flex-col gap-1">
-      <div className="flex items-center justify-between px-1 text-[19px] font-semibold">
+      <div className="mb-4 flex items-center justify-between px-1 text-[19px] font-semibold">
         <p>Options</p>
         <div className="grid cursor-pointer place-content-center rounded-full bg-[#f7f8f9] p-2 transition-transform duration-150 active:scale-85">
           <X size={16} strokeWidth={4} color="#999" />
@@ -36,22 +34,22 @@ function InitialView({
       <div className="mb-3 h-px w-full bg-[#f7f7f7]"></div>
       <div className="flex flex-col gap-3 font-semibold">
         <button
-          className="flex h-12 cursor-pointer items-center gap-[15px] rounded-2xl border-none bg-[#f7f8f9] pl-4 text-[17px] font-semibold outline-none transition-transform duration-150 active:scale-95"
+          className="flex h-12 cursor-pointer items-center gap-[15px] rounded-2xl border-none bg-[#f7f8f9] pl-4 text-[17px] font-semibold transition-transform duration-150 outline-none active:scale-95"
           onClick={onViewKey}
         >
           <Lock size={18} strokeWidth={2.65} color="#999" />
           View Private Key
         </button>
         <button
-          className="flex h-12 cursor-pointer items-center gap-[15px] rounded-2xl border-none bg-[#f7f8f9] pl-4 text-[17px] font-semibold outline-none transition-transform duration-150 active:scale-95"
+          className="flex h-12 cursor-pointer items-center gap-[15px] rounded-2xl border-none bg-[#f7f8f9] pl-4 text-[17px] font-semibold transition-transform duration-150 outline-none active:scale-95"
           onClick={onViewRecovery}
         >
           <NotepadText size={18} strokeWidth={2} color="#999" />
           View Recovery Phrase
         </button>
         <button
-          className="flex h-12 cursor-pointer items-center gap-[15px] rounded-2xl border-none bg-[#fff0f0] pl-4 text-[17px] font-semibold text-red-500 outline-none transition-transform duration-150 active:scale-95"
-          onClick={onRemoveWallet}
+          className="flex h-12 cursor-pointer items-center gap-[15px] rounded-2xl border-none bg-[#fff0f0] pl-4 text-[17px] font-semibold text-red-500 transition-transform duration-150 outline-none active:scale-95"
+          onClick={() => {}}
         >
           <TriangleAlert size={18} strokeWidth={2} color="red" />
           Remove Wallet
@@ -74,35 +72,37 @@ function KeyView({ onCancel }: { onCancel: () => void; onReveal: () => void }) {
           <X size={16} strokeWidth={4} color="#999" />
         </div>
       </div>
-      <p className="my-2 flex items-center justify-between text-[22px] font-semibold">Private Key</p>
-      <p className="my-[14px] mb-[17px] text-[17px] font-medium text-[#999999]">
+      <p className="my-2 flex items-center justify-between text-[22px] font-semibold">
+        Private Key
+      </p>
+      <p className="my-[2px] mb-[17px] text-[17px] font-medium text-[#999999]">
         Your Private Key is the key used to back up your wallet. Keep it secret and secure at all
         times.
       </p>
-      <div className="mb-3 h-px w-full bg-[#f7f7f7]"></div>
-      <ul className="mt-0 flex list-none flex-col p-0">
+      <div className="mb-1 h-px w-full bg-[#f7f7f7]"></div>
+      <ul className="mt-0 mb-4 flex list-none flex-col p-0">
         <li className="flex items-center gap-3 text-[15px] font-semibold text-[#999999]">
           <ShieldCheck size={24} color="#999" />
-          <p className="my-3">Keep your private key safe</p>
+          <p className="my-1.75">Keep your private key safe</p>
         </li>
         <li className="flex items-center gap-3 text-[15px] font-semibold text-[#999999]">
           <RectangleEllipsis size={24} color="#999" />
-          <p className="my-3">Don't share it with anyone else</p>
+          <p className="my-1.75">Don't share it with anyone else</p>
         </li>
         <li className="flex items-center gap-3 text-[15px] font-semibold text-[#999999]">
           <Ban size={24} color="#999" />
-          <p className="my-3">If you loose it, we can't recover it</p>
+          <p className="my-1.75">If you loose it, we can't recover it</p>
         </li>
       </ul>
       <div className="flex w-full items-center gap-3">
         <button
-          className="flex h-12 w-full cursor-pointer items-center justify-center rounded-full border-none bg-[#f0f2f4] text-[19px] font-semibold text-[#222222] outline-none transition-transform duration-150 active:scale-95"
+          className="flex h-12 w-full cursor-pointer items-center justify-center rounded-full border-none bg-[#f0f2f4] text-[19px] font-semibold text-[#222222] transition-transform duration-150 outline-none active:scale-95"
           onClick={onCancel}
         >
           Cancel
         </button>
         <button
-          className="flex h-12 w-full cursor-pointer items-center justify-center gap-[9px] rounded-full border-none bg-[#4dafff] text-[19px] font-semibold text-white outline-none transition-transform duration-150 active:scale-95"
+          className="flex h-12 w-full cursor-pointer items-center justify-center gap-[9px] rounded-full border-none bg-[#4dafff] text-[19px] font-semibold text-white transition-transform duration-150 outline-none active:scale-95"
           onClick={onCancel}
         >
           <ScanFace size={20} strokeWidth={2.25} />
@@ -129,34 +129,34 @@ function RecoveryView({ onCancel }: { onCancel: () => void; onReveal: () => void
       <p className="my-2 flex items-center justify-between text-[22px] font-semibold">
         Secret Recovery Phrase
       </p>
-      <p className="my-[14px] mb-[17px] text-[17px] font-medium text-[#999999]">
+      <p className="my-[2px] mb-[17px] text-[17px] font-medium text-[#999999]">
         Your Secret Recovery Phrase is the key used to back up your wallet. Keep it secret at all
         times.
       </p>
-      <div className="mb-3 h-px w-full bg-[#f7f7f7]"></div>
-      <ul className="mt-0 flex list-none flex-col p-0">
+      <div className="mb-1 h-px w-full bg-[#f7f7f7]"></div>
+      <ul className="mt-0 mb-4 flex list-none flex-col p-0">
         <li className="flex items-center gap-3 text-[15px] font-semibold text-[#999999]">
           <ShieldCheck size={24} color="#999" />
-          <p className="my-3">Keep your private key safe</p>
+          <p className="my-1.75">Keep your private key safe</p>
         </li>
         <li className="flex items-center gap-3 text-[15px] font-semibold text-[#999999]">
           <RectangleEllipsis size={24} color="#999" />
-          <p className="my-3">Don't share it with anyone else</p>
+          <p className="my-1.75">Don't share it with anyone else</p>
         </li>
         <li className="flex items-center gap-3 text-[15px] font-semibold text-[#999999]">
           <Ban size={24} color="#999" />
-          <p className="my-3">If you loose it, we can't recover it</p>
+          <p className="my-1.75">If you loose it, we can't recover it</p>
         </li>
       </ul>
       <div className="flex w-full items-center gap-3">
         <button
-          className="flex h-12 w-full cursor-pointer items-center justify-center rounded-full border-none bg-[#f0f2f4] text-[19px] font-semibold text-[#222222] outline-none transition-transform duration-150 active:scale-95"
+          className="flex h-12 w-full cursor-pointer items-center justify-center rounded-full border-none bg-[#f0f2f4] text-[19px] font-semibold text-[#222222] transition-transform duration-150 outline-none active:scale-95"
           onClick={onCancel}
         >
           Cancel
         </button>
         <button
-          className="flex h-12 w-full cursor-pointer items-center justify-center gap-[9px] rounded-full border-none bg-[#4dafff] text-[19px] font-semibold text-white outline-none transition-transform duration-150 active:scale-95"
+          className="flex h-12 w-full cursor-pointer items-center justify-center gap-[9px] rounded-full border-none bg-[#4dafff] text-[19px] font-semibold text-white transition-transform duration-150 outline-none active:scale-95"
           onClick={onCancel}
         >
           <ScanFace size={20} strokeWidth={2.25} />
@@ -173,12 +173,7 @@ export const FinishedDrawer = () => {
   const [elementRef, bounds] = useMeasure()
 
   const options = [
-    <InitialView
-      key={0}
-      onViewKey={() => setView(1)}
-      onViewRecovery={() => setView(2)}
-      onRemoveWallet={() => setView(3)}
-    />,
+    <InitialView key={0} onViewKey={() => setView(1)} onViewRecovery={() => setView(2)} />,
     <KeyView key={1} onCancel={() => setView(0)} onReveal={() => setView(0)} />,
     <RecoveryView key={2} onCancel={() => setView(0)} onReveal={() => setView(0)} />,
   ]
@@ -196,7 +191,7 @@ export const FinishedDrawer = () => {
         bounce: 0,
         duration: 0.27,
       }}
-      className="overflow-hidden rounded-[2rem] border border-gray-200 bg-white"
+      className="w-[360px] overflow-hidden rounded-[2rem] border border-gray-200 bg-white"
     >
       <div className="p-6" ref={elementRef}>
         <AnimatePresence initial={false} mode="popLayout" custom={view}>

@@ -1,7 +1,6 @@
 import { ArticleHeading } from "@/components/ArticleHeading"
 import { InlineDefinition } from "@/components/InlineDefinition"
 import { CodeBlock } from "@/lib/components/code-block"
-import { Info } from "lucide-react"
 import { finishedCode, initialCode } from "./article-code"
 import { CodePreviewSwitch } from "./components/codePreviewSwitch"
 import { FinishedDrawer } from "./components/finishedDrawer"
@@ -35,7 +34,9 @@ export default function FamilyDrawer() {
           playsInline
           loop
           preload="metadata"
-          className="border-shadow h-auto w-1/2 rounded-[9px] [corner-shape:squircle] supports-[corner-shape:squircle]:rounded-2xl"
+          width={886}
+          height={1118}
+          className="border-shadow h-auto w-1/2 rounded-[9px] bg-[#BFBCBF] [corner-shape:squircle] supports-[corner-shape:squircle]:rounded-2xl"
         >
           <source src="/videos/articles/family-drawer.mp4" type="video/mp4" />
         </video>
@@ -159,9 +160,9 @@ const [elementRef, bounds] = useMeasure();`}</CodeBlock>
     bounce: 0,
     duration: 0.27,
   }}
-  className="drawer"
+  className="overflow-hidden rounded-[2rem] border border-gray-200 bg-white"
 >
-  <div className="drawer-content" ref={elementRef}>
+  <div className="p-6" ref={elementRef}>
     <AnimatePresence initial={false} mode="popLayout" custom={view}>
       <motion.div
         initial={{ opacity: 0, scale: 0.96, filter: "blur(2px)" }}
@@ -236,7 +237,11 @@ const [elementRef, bounds] = useMeasure();`}</CodeBlock>
         component, and it is now done! The next steps for it are to replace the filler text with
         actual recreations of the private key and recovery phrase screens taken from the app.
       </p>
-      <CodePreviewSwitch code={finishedCode} previewClassName="flex flex-col items-center justify-end pb-4">
+      <CodePreviewSwitch
+        code={finishedCode}
+        height="480px"
+        previewClassName="flex flex-col items-center justify-end pb-4"
+      >
         <FinishedDrawer />
       </CodePreviewSwitch>
       <p className="max-w-2xl text-[#424242]">

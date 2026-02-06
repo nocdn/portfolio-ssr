@@ -11,6 +11,7 @@ interface CodePreviewSwitchProps {
   lang?: BundledLanguage
   previewClassName?: string
   codeClassName?: string
+  height?: string
 }
 
 export function CodePreviewSwitch({
@@ -19,6 +20,7 @@ export function CodePreviewSwitch({
   lang = "tsx",
   previewClassName,
   codeClassName,
+  height = "384px",
 }: CodePreviewSwitchProps) {
   const [selected, setSelected] = useState<"preview" | "code">("preview")
   const [highlightedHtml, setHighlightedHtml] = useState<string>("")
@@ -66,7 +68,7 @@ export function CodePreviewSwitch({
           Code
         </button>
       </div>
-      <div id="content" className="h-96 overflow-auto">
+      <div id="content" className="overflow-auto" style={{ height: height }}>
         {selected === "preview" ? (
           <div className={cn("h-full", previewClassName)}>{children}</div>
         ) : (

@@ -93,13 +93,17 @@ export function InlineDefinition({
                 render={
                   <motion.div
                     initial={{ opacity: 0, scale: 0.92, filter: "blur(2px)" }}
-                    animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-                    exit={{ opacity: 0, scale: 0.96, filter: "blur(2px)" }}
-                    transition={{
-                      type: "tween",
-                      ease: [0.26, 1, 0.5, 1],
-                      bounce: 0,
-                      duration: 0.27,
+                    animate={{
+                      opacity: 1,
+                      scale: 1,
+                      filter: "blur(0px)",
+                      transition: { ease: [0.165, 0.84, 0.2, 1] },
+                    }}
+                    exit={{
+                      opacity: 0,
+                      scale: 0.96,
+                      filter: "blur(2px)",
+                      transition: { ease: [0.19, 1, 0.22, 1] },
                     }}
                   />
                 }
