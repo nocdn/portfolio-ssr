@@ -82,6 +82,13 @@ export function ComponentCarousel({ cardTick }: { cardTick: number }) {
   const isInitialRender = useRef(true)
 
   useEffect(() => {
+    componentCards.forEach((card) => {
+      const img = new window.Image()
+      img.src = card.image
+    })
+  }, [])
+
+  useEffect(() => {
     if (isInitialRender.current) {
       isInitialRender.current = false
       return
