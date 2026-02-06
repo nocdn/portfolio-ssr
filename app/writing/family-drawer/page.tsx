@@ -1,8 +1,10 @@
 import { ArticleHeading } from "@/components/ArticleHeading"
 import { InlineDefinition } from "@/components/InlineDefinition"
 import { CodeBlock } from "@/lib/components/code-block"
-import { initialCode } from "./article-code"
+import { Info } from "lucide-react"
+import { finishedCode, initialCode } from "./article-code"
 import { CodePreviewSwitch } from "./components/codePreviewSwitch"
+import { FinishedDrawer } from "./components/finishedDrawer"
 import { InitialDrawer } from "./components/initialDrawer"
 
 export default function FamilyDrawer() {
@@ -64,19 +66,22 @@ export default function FamilyDrawer() {
         </InlineDefinition>
         , starting with all of those imports, and why they are needed.
       </p>
-      <CodeBlock lang="tsx" className="border-shadow max-w-2xl rounded-[9.5px] p-3">{`import { AnimatePresence, motion } from "motion/react"
+      <CodeBlock
+        lang="tsx"
+        className="border-shadow max-w-2xl rounded-[9.5px] p-3"
+      >{`import { AnimatePresence, motion } from "motion/react"
 import { useMemo, useState } from "react"
 import useMeasure from "react-use-measure"`}</CodeBlock>
       <p className="max-w-2xl text-[#424242]">
         <span className="code-inline">motion/react</span> is the library that provides the motion
         primitives, like <span className="code-inline">motion.div</span> which allows us to animate
-        pretty much every property of that element.
+        pretty much every property of that element using{" "}
+        <span className="code-inline">initial</span>, <span className="code-inline">animate</span>,
+        and <span className="code-inline">exit</span> props.
       </p>
       <p className="max-w-2xl text-[#424242]">
-        In the code above, we define the <span className="code-inline">initial</span>,{" "}
-        <span className="code-inline">animate</span>, and <span className="code-inline">exit</span>{" "}
-        properties of the element in the drawer. The <span className="code-inline">initial</span>{" "}
-        property is the state that the element will be in when it is first added to the{" "}
+        <span className="code-inline">AnimatePresence</span> is crucial here since it allows
+        components to animate out before being removed from the{" "}
         <InlineDefinition
           title="What is the DOM?"
           explanation="The Document Object Model - a tree-like structure that represents all the HTML elements on a web page in the browser's memory, allowing JavaScript to interact with and modify the page content."
@@ -84,31 +89,27 @@ import useMeasure from "react-use-measure"`}</CodeBlock>
         >
           DOM
         </InlineDefinition>
-        . The <span className="code-inline">animate</span> property describes the animation that
-        occurs as soon as the element is mounted, while <span className="code-inline">exit</span>{" "}
-        defines how the element animates out when it's removed.
-      </p>
-      <p className="max-w-2xl text-[#424242]">
-        <span className="code-inline">AnimatePresence</span> is crucial here since it allows
-        components to animate out before being removed from the DOM, rather than disappearing
-        instantly. Without it, the <span className="code-inline">exit</span> animation would never
-        play.
+        , rather than disappearing instantly. Without it, the{" "}
+        <span className="code-inline">exit</span> animation would never play.
       </p>
       <p className="max-w-2xl text-[#424242]">
         <span className="code-inline">react-use-measure</span> provides the{" "}
         <span className="code-inline">useMeasure</span>{" "}
         <InlineDefinition
-          title="What is a hook?"
+          title="What is a react hook?"
           explanation="A special React function that lets you 'hook into' React features like state and lifecycle events from functional components, similar to how plugins extend software functionality."
           readMoreURL="https://react.dev/reference/react/hooks"
         >
           hook
         </InlineDefinition>
         , which tracks the dimensions of DOM elements in real-time. This is essential for creating
-        smooth height transitions as the drawer content changes—we can animate to the actual
+        smooth height transitions as the drawer content changes as we can animate to the actual
         measured height rather than guessing or using fixed values.
       </p>
-      <CodeBlock lang="tsx" className="border-shadow max-w-2xl rounded-[9.5px] p-3">{`const [view, setView] = useState(0);
+      <CodeBlock
+        lang="tsx"
+        className="border-shadow max-w-2xl rounded-[9.5px] p-3"
+      >{`const [view, setView] = useState(0);
 const [elementRef, bounds] = useMeasure();`}</CodeBlock>
       <p className="max-w-2xl text-[#424242]">
         The <span className="code-inline">view</span>{" "}
@@ -123,7 +124,7 @@ const [elementRef, bounds] = useMeasure();`}</CodeBlock>
         <span className="code-inline">useMeasure</span> hook returns two things:{" "}
         <span className="code-inline">elementRef</span> (a{" "}
         <InlineDefinition
-          title="What is a ref?"
+          title="What is a useRef hook?"
           explanation="A reference that provides direct access to a DOM element from React code, like getting a pointer to a specific HTML element so you can measure or manipulate it directly. Here, it is used to attach to the element we want to measure, so we can measure its height."
           readMoreURL="https://react.dev/learn/referencing-values-with-refs"
         >
@@ -135,7 +136,7 @@ const [elementRef, bounds] = useMeasure();`}</CodeBlock>
       <p className="max-w-2xl text-[#424242]">
         The <span className="code-inline">options</span> array contains the different{" "}
         <InlineDefinition
-          title="What are views?"
+          title="What is a view in this context?"
           explanation="Different screens or content layouts that can be displayed in the same container, like different pages in a tabbed interface where only one is visible at a time."
           readMoreURL="https://react.dev/learn/conditional-rendering"
         >
@@ -235,8 +236,8 @@ const [elementRef, bounds] = useMeasure();`}</CodeBlock>
         component, and it is now done! The next steps for it are to replace the filler text with
         actual recreations of the private key and recovery phrase screens taken from the app.
       </p>
-      <CodePreviewSwitch code="" previewClassName="flex flex-col items-center justify-end pb-4">
-        {/* Final drawer with styled views will go here */}
+      <CodePreviewSwitch code={finishedCode} previewClassName="flex flex-col items-center justify-end pb-4">
+        <FinishedDrawer />
       </CodePreviewSwitch>
       <p className="max-w-2xl text-[#424242]">
         Now, with this version, the only meaningful code change that was made, was adding the{" "}
@@ -256,7 +257,10 @@ const [elementRef, bounds] = useMeasure();`}</CodeBlock>
         <span className="code-inline">./KeyView</span> and{" "}
         <span className="code-inline">./RecoveryView</span> files.
       </p>
-      <CodeBlock lang="tsx" className="border-shadow max-w-2xl rounded-[9.5px] p-3">{`const options = [
+      <CodeBlock
+        lang="tsx"
+        className="border-shadow max-w-2xl rounded-[9.5px] p-3"
+      >{`const options = [
   <InitialView
     key="initial"
     onViewKey={() => setView(1)}

@@ -21,7 +21,8 @@
     "react-intersection-observer": "^10.0.2",
     "react-use-measure": "^2.1.7",
     "shiki": "latest",
-    "tailwind-merge": "latest"
+    "tailwind-merge": "latest",
+    "vaul": "^1.1.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "latest",
