@@ -1,3 +1,5 @@
+import { ArticleHeading } from "@/components/ArticleHeading"
+import { InlineDefinition } from "@/components/InlineDefinition"
 import { CodeBlock } from "@/lib/components/code-block"
 import { initialCode } from "./article-code"
 import { CodePreviewSwitch } from "./components/codePreviewSwitch"
@@ -6,10 +8,7 @@ import { InitialDrawer } from "./components/initialDrawer"
 export default function FamilyDrawer() {
   return (
     <div className="flex flex-col gap-5">
-      <div className="mb-2">
-        <h1 className="w-fit font-medium">Recreating the Family Drawer</h1>
-        <p className="text-[15px] text-gray-500/60">August 2025</p>
-      </div>
+      <ArticleHeading title="Recreating the Family Drawer" date="August 2025" />
       <p className="mb-2 max-w-2xl text-[#424242]">
         It feels like whenever the topic of animations (whether that is web or otherwise) comes up,
         the{" "}
@@ -48,9 +47,33 @@ export default function FamilyDrawer() {
         The most important aspect of this whole component is the motion, no doubt about that, so
         with my first attempt, I ignored the icons, colours and typography and ended up with this:
       </p>
-      <CodePreviewSwitch code={initialCode} previewClassName="flex flex-col items-center justify-end pb-4">
+      <CodePreviewSwitch
+        code={initialCode}
+        previewClassName="flex flex-col items-center justify-end pb-4"
+      >
         <InitialDrawer />
       </CodePreviewSwitch>
+      <p className="max-w-2xl text-[#424242]">
+        Now, let's break down each part of this initial{" "}
+        <InlineDefinition
+          title="What is a component?"
+          explanation="A component is a self-contained piece of code that performs a specific function or displays a specific UI element. In this case, the component is the entire drawer, and later on, will have other components inside it. For this component, it holds the HTML structure, styling, and the logic."
+          readMoreURL="https://react.dev/learn/your-first-component"
+        >
+          component
+        </InlineDefinition>
+        , starting with all of those imports, and why they are needed.
+      </p>
+      <CodeBlock lang="tsx" className="border-shadow max-w-2xl rounded-[9.5px] p-3">{`"use client"
+
+import { AnimatePresence, motion } from "motion/react"
+import { useMemo, useState } from "react"
+import useMeasure from "react-use-measure"`}</CodeBlock>
+      <p className="max-w-2xl text-[#424242]">
+        <span className="code-inline">motion/react</span> is the library that provides the motion
+        primitives, such as <span className="code-inline">AnimatePresence</span> and{" "}
+        <span className="code-inline">motion.div</span>
+      </p>
     </div>
   )
 }

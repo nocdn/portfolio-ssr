@@ -70,13 +70,27 @@ export function CodePreviewSwitch({
         {selected === "preview" ? (
           <div className={cn("h-full", previewClassName)}>{children}</div>
         ) : (
-          <div
-            className={cn(
-              "font-ioskeley-mono h-full overflow-auto p-4 text-sm [&_pre]:m-0 [&_pre]:bg-transparent [&_pre]:p-0",
-              codeClassName
-            )}
-            dangerouslySetInnerHTML={{ __html: highlightedHtml }}
-          />
+          <>
+            <style
+              dangerouslySetInnerHTML={{
+                __html: `
+                  .shiki-code-preview pre,
+                  .shiki-code-preview code,
+                  .shiki-code-preview pre *,
+                  .shiki-code-preview code * {
+                    font-family: inherit !important;
+                  }
+                `,
+              }}
+            />
+            <div
+              className={cn(
+                "shiki-code-preview font-ioskeley-mono h-full overflow-auto p-4 text-sm [&_pre]:m-0 [&_pre]:bg-transparent [&_pre]:p-0",
+                codeClassName
+              )}
+              dangerouslySetInnerHTML={{ __html: highlightedHtml }}
+            />
+          </>
         )}
       </div>
     </div>
