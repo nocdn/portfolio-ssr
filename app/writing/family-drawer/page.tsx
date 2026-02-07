@@ -1,3 +1,4 @@
+import { cacheLife } from "next/cache"
 import { ArticleHeading } from "@/components/ArticleHeading"
 import { InlineDefinition } from "@/components/InlineDefinition"
 import { CodeBlock } from "@/lib/components/code-block"
@@ -6,7 +7,10 @@ import { CodePreviewSwitch } from "./components/codePreviewSwitch"
 import { FinishedDrawer } from "./components/finishedDrawer"
 import { InitialDrawer } from "./components/initialDrawer"
 
-export default function FamilyDrawer() {
+export default async function FamilyDrawer() {
+  "use cache"
+  cacheLife("max")
+
   return (
     <div className="flex flex-col gap-5">
       <ArticleHeading title="Recreating the Family Drawer" date="August 2025" />

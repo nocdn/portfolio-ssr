@@ -1,7 +1,11 @@
+import { cacheLife } from "next/cache"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 
-export default function WritingLayout({ children }: { children: React.ReactNode }) {
+export default async function WritingLayout({ children }: { children: React.ReactNode }) {
+  "use cache"
+  cacheLife("max")
+
   return (
     <div className="font-inter flex w-screen flex-col items-center py-20 font-[440]">
       <div className="mb-20 flex w-full max-w-2xl justify-between">

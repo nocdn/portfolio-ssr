@@ -6,37 +6,36 @@ import "./globals.css"
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 })
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 })
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 })
 
 const jetBrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
+  display: "swap",
 })
 
 const ioskeleyMono = localFont({
-  src: [
-    { path: "./fonts/IoskeleyMono-Light.woff2", weight: "300" },
-    { path: "./fonts/IoskeleyMono-Regular.woff2", weight: "400" },
-    { path: "./fonts/IoskeleyMono-Medium.woff2", weight: "500" },
-    { path: "./fonts/IoskeleyMono-SemiBold.woff2", weight: "600" },
-    { path: "./fonts/IoskeleyMono-Bold.woff2", weight: "700" },
-    { path: "./fonts/IoskeleyMono-ExtraBold.woff2", weight: "800" },
-  ],
+  src: "./fonts/IoskeleyMono-Regular.woff2",
   variable: "--font-ioskeley-mono",
+  display: "swap",
+  fallback: ["ui-monospace", "monospace"],
 })
 
 const switzer = localFont({
-  src: "../public/fonts/Switzer-Medium.woff2",
+  src: "./fonts/Switzer-Medium.woff2",
   variable: "--font-switzer",
   display: "swap",
   preload: true,
@@ -44,7 +43,7 @@ const switzer = localFont({
 })
 
 const ppNeueMontreal = localFont({
-  src: "../public/fonts/PPNeueMontreal-Medium.woff2",
+  src: "./fonts/PPNeueMontreal-Medium.woff2",
   variable: "--font-pp-neue-montreal",
   display: "swap",
   preload: true,

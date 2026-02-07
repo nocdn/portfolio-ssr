@@ -1,12 +1,12 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactCompiler: true,
   devIndicators: false,
+  cacheComponents: true,
   experimental: {
-    optimizePackageImports: ["shiki", "motion"],
+    optimizePackageImports: ["shiki", "motion", "lucide-react"],
   },
-};
+}
 
-export default nextConfig;
+export default nextConfig
