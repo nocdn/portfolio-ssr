@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://bartoszbak.org/og.png",
+        url: "https://ssr.bartoszbak.org/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Bartosz Bak - Aspiring design engineer based in the UK",
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     creator: "@nocdns",
     title: "Bartosz Bak",
     description: "Aspiring design engineer based in the UK",
-    images: ["https://bartoszbak.org/og.png"],
+    images: ["https://ssr.bartoszbak.org/opengraph-image"],
   },
   alternates: {
     canonical: "https://bartoszbak.org",
@@ -98,7 +98,7 @@ export default function RootLayout({
     name: "Bartosz Bak",
     url: "https://bartoszbak.org",
     description: "Aspiring design engineer based in the UK",
-    image: "https://bartoszbak.org/og.png",
+    image: "https://ssr.bartoszbak.org/opengraph-image",
   }
   return (
     <html lang="en">
