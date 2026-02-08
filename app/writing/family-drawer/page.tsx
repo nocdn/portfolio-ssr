@@ -2,10 +2,13 @@ import { cacheLife } from "next/cache"
 import { ArticleHeading } from "@/components/ArticleHeading"
 import { InlineDefinition } from "@/components/InlineDefinition"
 import { CodeBlock } from "@/lib/components/code-block"
+import { articleMetadata } from "@/lib/article-metadata"
 import { finishedCode, initialCode } from "./article-code"
 import { CodePreviewSwitch } from "./components/codePreviewSwitch"
 import { FinishedDrawer } from "./components/finishedDrawer"
 import { InitialDrawer } from "./components/initialDrawer"
+
+export const metadata = articleMetadata("Recreating the Family Drawer", "/writing/family-drawer")
 
 export default async function FamilyDrawer() {
   "use cache"

@@ -2,13 +2,9 @@ import { ImageResponse } from "next/og"
 import { readFile } from "node:fs/promises"
 import { join } from "node:path"
 
-export const alt = "Bartosz Bak - Design Engineer"
-export const size = { width: 1200, height: 630 }
-export const contentType = "image/png"
-
-export default async function Image() {
-  const nameText = "Bartosz Bak"
-  const titleText = "Design Engineer"
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url)
+  const title = searchParams.get("title") ?? ""
 
   const [interSemiBold, openRundeMedium] = await Promise.all([
     readFile(join(process.cwd(), "app/fonts/Inter-SemiBold.ttf")),
@@ -26,7 +22,6 @@ export default async function Image() {
         position: "relative",
       }}
     >
-      {/* Top left - Name and title */}
       <div
         style={{
           display: "flex",
@@ -35,29 +30,29 @@ export default async function Image() {
       >
         <div
           style={{
-            color: "#0a0a0a",
-            fontSize: 72,
-            fontFamily: "Inter",
-            fontWeight: 600,
-          }}
-        >
-          {nameText}
-        </div>
-        <div
-          style={{
             color: "#71717a",
-            fontSize: 40,
+            fontSize: 32,
             fontFamily: "OpenRunde",
             fontWeight: 500,
-            marginTop: 12,
             textShadow: "0 0 0.5px #71717a",
           }}
         >
-          {titleText}
+          Bartosz Bak
+        </div>
+        <div
+          style={{
+            color: "#0a0a0a",
+            fontSize: 64,
+            fontFamily: "Inter",
+            fontWeight: 600,
+            marginTop: 16,
+            maxWidth: 900,
+          }}
+        >
+          {title}
         </div>
       </div>
 
-      {/* Bottom right - Sprout SVG */}
       <div
         style={{
           position: "absolute",
@@ -84,7 +79,8 @@ export default async function Image() {
       </div>
     </div>,
     {
-      ...size,
+      width: 1200,
+      height: 630,
       fonts: [
         {
           name: "Inter",
