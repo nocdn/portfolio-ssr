@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 
-const BASE_URL = "https://bartoszbak.org"
+const BASE_URL = "https://ssr.bartoszbak.org"
 
 export function articleMetadata(title: string, href: string): Metadata {
   const ogImageUrl = `${BASE_URL}/api/og?title=${encodeURIComponent(title)}`
