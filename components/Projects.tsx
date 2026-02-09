@@ -18,5 +18,25 @@ export const ProjectsDesktop = () => {
 }
 
 export const ProjectsMobile = () => {
-  return <div>ProjectsMobile</div>
+  return (
+    <SectionMobile title="PROJECTS">
+      <div className="group flex flex-col gap-4">
+        {projects.map((project) => (
+          <a
+            className="flex items-center justify-between gap-4"
+            key={project.title}
+            href={project.demoURL || project.sourceURL || ""}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <p className="flex-nowrap text-[17px] whitespace-nowrap">
+              {project.mobileTitle || project.title}
+            </p>
+            <div className="h-0.25 w-full bg-gray-200"></div>
+            <p className="text-sm text-gray-500/90">{project.year}</p>
+          </a>
+        ))}
+      </div>
+    </SectionMobile>
+  )
 }

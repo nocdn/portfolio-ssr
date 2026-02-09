@@ -12,9 +12,9 @@ export const AboutDesktop = () => {
         Hey there, I'm{" "}
         <Suspense fallback={<span className="text-blue-600">Bartek</span>}>
           <TimeZoneName />
-        </Suspense>. I am a software engineer based in the UK, studying computer
-        science at the University of York. I'm currently exploring typography, web animations and
-        crafting interactions.
+        </Suspense>
+        . I am a software engineer based in the UK, studying computer science at the University of
+        York. I'm currently exploring typography, web animations and crafting interactions.
       </div>
       <div className="mt-4">
         You can see some more of my work on{" "}
@@ -46,5 +46,13 @@ export const AboutDesktop = () => {
 }
 
 export const AboutMobile = () => {
-  return <div>AboutMobile</div>
+  return (
+    <SectionMobile title="ABOUT">
+      <div>
+        Hello, I'm <span className="text-blue-600">Bartek</span>, a software engineer based in the
+        UK, studying computer science at the University of York. I'm currently exploring typography,
+        web animations and crafting interactions.
+      </div>
+    </SectionMobile>
+  )
 }

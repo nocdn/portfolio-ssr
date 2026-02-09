@@ -2,6 +2,7 @@
 import { ArrowRightIcon, ArrowUpRight } from "lucide-react"
 import { useState } from "react"
 import { ComponentCarousel } from "./ComponentCarousel"
+import { ComponentCarouselMobile } from "./ComponentCarouselMobile"
 import { SectionDesktop, SectionMobile } from "./Section"
 
 export const ComponentsDesktop = () => {
@@ -36,5 +37,9 @@ export const ComponentsDesktop = () => {
 }
 
 export const ComponentsMobile = () => {
-  return <div>ComponentsMobile</div>
+  return (
+    <SectionMobile title="COMPONENTS">
+      <ComponentCarouselMobile />
+    </SectionMobile>
+  )
 }

@@ -62,7 +62,7 @@ export const SectionMobile = ({
       id={id}
       className="font-pp-neue-montreal flex h-svh flex-col justify-end gap-2 p-8 pb-[calc(env(safe-area-inset-bottom)+2rem)] text-[20px] leading-[30px] font-medium"
     >
-      <div className="relative mb-1 flex items-center font-mono text-[17px] font-semibold text-gray-500/60">
+      <div className="relative mb-1 flex items-center font-mono text-[16px] font-semibold tracking-[0.015em] text-gray-500/60">
         {title}
         <div className="ml-auto flex items-center gap-2">{secondaryChildren}</div>
       </div>

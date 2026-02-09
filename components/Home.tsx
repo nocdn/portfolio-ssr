@@ -1,6 +1,7 @@
 import { Suspense } from "react"
 import { AboutDesktop, AboutMobile } from "./About"
 import { ComponentsDesktop, ComponentsMobile } from "./Components"
+import { MobileNavigation } from "./MobileNavigation"
 import { ProjectsDesktop, ProjectsMobile } from "./Projects"
 import { WritingDesktop } from "./Writing"
 
@@ -22,5 +23,17 @@ export const HomeDesktop = () => {
 }
 
 export const HomeMobile = () => {
-  return <div>HomeMobile</div>
+  return (
+    <div
+      className="flex h-svh w-screen snap-y snap-mandatory flex-col overflow-y-scroll *:h-svh *:w-screen *:flex-none *:snap-start"
+      style={{
+        scrollbarWidth: "none",
+      }}
+    >
+      <MobileNavigation />
+      <AboutMobile />
+      <ProjectsMobile />
+      <ComponentsMobile />
+    </div>
+  )
 }
