@@ -65,6 +65,7 @@ export function Article({
   return (
     <Link
       href={href}
+      prefetch={true}
       className={`font-inter flex w-full justify-between rounded-lg border border-gray-200 bg-white p-3 text-[16px] leading-normal ${
         disabled ? "cursor-not-allowed" : "cursor-pointer hover:bg-gray-100/55"
       }`}

@@ -1,8 +1,7 @@
 "use client"
 import { ArrowRightIcon, ArrowUpRight } from "lucide-react"
 import { useState } from "react"
-import { ComponentCarousel } from "./ComponentCarousel"
-import { ComponentCarouselMobile } from "./ComponentCarouselMobile"
+import { DesktopComponentCarousel, MobileComponentCarousel } from "./ComponentCarousel"
 import { SectionDesktop, SectionMobile } from "./Section"
 
 export const ComponentsDesktop = () => {
@@ -31,15 +30,29 @@ export const ComponentsDesktop = () => {
         </div>
       }
     >
-      <ComponentCarousel cardTick={componentCardTick} />
+      <DesktopComponentCarousel cardTick={componentCardTick} />
     </SectionDesktop>
   )
 }
 
 export const ComponentsMobile = () => {
   return (
-    <SectionMobile title="COMPONENTS">
-      <ComponentCarouselMobile />
+    <SectionMobile
+      id="components"
+      title="COMPONENTS"
+      secondaryChildren={
+        <a
+          href="https://ui.bartoszbak.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-1 text-blue-700/60"
+        >
+          SHADCN REGISTRY
+          <ArrowUpRight size={16} strokeWidth={2.75} className="mr-0.5 text-blue-700 opacity-60" />
+        </a>
+      }
+    >
+      <MobileComponentCarousel />
     </SectionMobile>
   )
 }

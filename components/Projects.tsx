@@ -19,7 +19,7 @@ export const ProjectsDesktop = () => {
 
 export const ProjectsMobile = () => {
   return (
-    <SectionMobile title="PROJECTS">
+    <SectionMobile id="projects" title="PROJECTS">
       <div className="group flex flex-col gap-4">
         {projects.map((project) => (
           <a

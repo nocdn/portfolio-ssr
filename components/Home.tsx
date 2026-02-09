@@ -1,9 +1,10 @@
 import { Suspense } from "react"
 import { AboutDesktop, AboutMobile } from "./About"
 import { ComponentsDesktop, ComponentsMobile } from "./Components"
+import { ContactMobile } from "./Contact"
 import { MobileNavigation } from "./MobileNavigation"
 import { ProjectsDesktop, ProjectsMobile } from "./Projects"
-import { WritingDesktop } from "./Writing"
+import { WritingDesktop, WritingMobile } from "./Writing"
 
 export const HomeDesktop = () => {
   return (
@@ -34,6 +35,8 @@ export const HomeMobile = () => {
       <AboutMobile />
       <ProjectsMobile />
       <ComponentsMobile />
+      <WritingMobile />
+      <ContactMobile />
     </div>
   )
 }

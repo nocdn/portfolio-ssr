@@ -1,6 +1,6 @@
 import { articles } from "@/data/articles"
 import { Article } from "./Article"
-import { SectionDesktop } from "./Section"
+import { SectionDesktop, SectionMobile } from "./Section"
 
 export function WritingDesktop() {
   return (
@@ -14,5 +14,17 @@ export function WritingDesktop() {
         ))}
       </div>
     </SectionDesktop>
+  )
+}
+
+export function WritingMobile() {
+  return (
+    <SectionMobile id="writing" title="WRITING">
+      <div className="flex flex-col gap-2">
+        {articles.map((article, index) => (
+          <Article key={index} {...article} />
+        ))}
+      </div>
+    </SectionMobile>
   )
 }
