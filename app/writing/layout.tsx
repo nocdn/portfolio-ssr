@@ -7,7 +7,7 @@ export default async function WritingLayout({ children }: { children: React.Reac
   cacheLife("max")
 
   return (
-    <div className="font-inter flex w-screen flex-col items-center py-20 font-[440]">
+    <div className="font-inter flex w-full flex-col items-center py-20 font-[440]">
       <div className="mb-20 flex w-full max-w-2xl justify-between">
         <Link href="/" className="group flex items-center gap-1.5">
           <ArrowLeft
