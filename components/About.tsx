@@ -1,6 +1,7 @@
 import { Suspense } from "react"
 import { SectionDesktop, SectionMobile } from "./Section"
 import { TimeZoneName } from "./TimeZoneName"
+import { TwitterHover } from "./TwitterHover"
 
 export const AboutDesktop = () => {
   return (
@@ -18,14 +19,20 @@ export const AboutDesktop = () => {
       </div>
       <div className="mt-4">
         You can see some more of my work on{" "}
-        <a
-          href="https://x.com/nocdns"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[18.5px] text-blue-600"
+        <Suspense
+          fallback={
+            <a
+              href="https://x.com/nocdns"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[18.5px] text-blue-600"
+            >
+              Twitter
+            </a>
+          }
         >
-          Twitter
-        </a>
+          <TwitterHover />
+        </Suspense>
         , reach me via <br />
         <a href="mailto:contact@bartoszbak.org" className="text-blue-600">
           email
