@@ -11,7 +11,7 @@ export function TwitterHover() {
       href="https://x.com/nocdns"
       target="_blank"
       rel="noopener noreferrer"
-      className="relative text-[18.5px] text-blue-600"
+      className="relative text-[18.5px] text-blue-600 dark:text-blue-400"
       onMouseEnter={() => {
         setHoveringTwitter(true)
         setTimeout(() => setHoveringTwitter(false), 300)
@@ -37,7 +37,7 @@ export function TwitterHover() {
               duration: 0.5,
               ease: [0.215, 0.61, 0.355, 1],
             }}
-            className="pointer-events-none absolute top-1/2 left-[calc(50%-1px)] -translate-x-1/2 -translate-y-1/2 text-[16px] font-medium whitespace-nowrap text-blue-600/50 select-none"
+            className="pointer-events-none absolute top-1/2 left-[calc(50%-1px)] -translate-x-1/2 -translate-y-1/2 text-[16px] font-medium whitespace-nowrap text-blue-600/50 dark:text-blue-400/50 select-none"
           >
             building in public
           </motion.div>

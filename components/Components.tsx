@@ -17,7 +17,7 @@ export const ComponentsDesktop = () => {
           <ArrowUpRight
             size={16}
             strokeWidth={2.75}
-            className="mr-0.5 text-blue-700 opacity-40 transition-all duration-200 group-hover:opacity-60"
+            className="mr-0.5 text-blue-700 dark:text-blue-400 opacity-40 transition-all duration-200 group-hover:opacity-60"
           />
         </span>
       }
@@ -45,10 +45,10 @@ export const ComponentsMobile = () => {
           href="https://ui.bartoszbak.org/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-1 text-blue-700/60"
+          className="flex items-center gap-1 text-blue-700/60 dark:text-blue-400/60"
         >
           SHADCN REGISTRY
-          <ArrowUpRight size={16} strokeWidth={2.75} className="mr-0.5 text-blue-700 opacity-60" />
+          <ArrowUpRight size={16} strokeWidth={2.75} className="mr-0.5 text-blue-700 dark:text-blue-400 opacity-60" />
         </a>
       }
     >

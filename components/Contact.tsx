@@ -44,21 +44,21 @@ export function ContactMobile() {
                 className="flex items-center justify-between gap-4"
               >
                 <p className="flex-nowrap text-[17px] whitespace-nowrap">{item.title}</p>
-                <div className="h-0.25 w-full bg-gray-200"></div>
+                <div className="h-0.25 w-full bg-gray-200 dark:bg-white/10"></div>
                 <div className="flex items-center gap-1">
                   <p
-                    className={`font-inter text-[16px] font-[530] ${copied ? "text-blue-600" : "text-gray-500/90"}`}
+                    className={`font-inter text-[16px] font-[530] ${copied ? "text-blue-600 dark:text-blue-400" : "text-gray-500/90 dark:text-gray-400/90"}`}
                   >
                     {copied ? "Copied" : item.action}
                   </p>
                   {copied ? (
                     <Check
-                      className="mr-[1.5px] ml-1.5 h-3.5 w-3.5 text-blue-600"
+                      className="mr-[1.5px] ml-1.5 h-3.5 w-3.5 text-blue-600 dark:text-blue-400"
                       strokeWidth={2.75}
                     />
                   ) : (
                     <Copy
-                      className="mr-[1.5px] ml-1.5 h-3.5 w-3.5 text-gray-500/90"
+                      className="mr-[1.5px] ml-1.5 h-3.5 w-3.5 text-gray-500/90 dark:text-gray-400/90"
                       strokeWidth={2.75}
                     />
                   )}
@@ -76,16 +76,16 @@ export function ContactMobile() {
               rel="noopener noreferrer"
             >
               <p className="flex-nowrap text-[17px] whitespace-nowrap">{item.title}</p>
-              <div className="h-0.25 w-full bg-gray-200"></div>
+              <div className="h-0.25 w-full bg-gray-200 dark:bg-white/10"></div>
               <div className="flex items-center gap-1">
-                <p className="font-inter text-[16px] font-[530] text-gray-500/90">{item.action}</p>
-                <ExternalLink className="ml-1.5 h-3.5 w-3.5 text-gray-500/90" strokeWidth={2.75} />
+                <p className="font-inter text-[16px] font-[530] text-gray-500/90 dark:text-gray-400/90">{item.action}</p>
+                <ExternalLink className="ml-1.5 h-3.5 w-3.5 text-gray-500/90 dark:text-gray-400/90" strokeWidth={2.75} />
               </div>
             </a>
           )
         })}
       </div>
-      <p className="mt-4 font-sans text-[15.5px] text-gray-500">Thanks for visiting!</p>
+      <p className="mt-4 font-sans text-[15.5px] text-gray-500 dark:text-gray-400">Thanks for visiting!</p>
     </SectionMobile>
   )
 }

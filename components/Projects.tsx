@@ -32,8 +32,8 @@ export const ProjectsMobile = () => {
             <p className="flex-nowrap text-[17px] whitespace-nowrap">
               {project.mobileTitle || project.title}
             </p>
-            <div className="h-0.25 w-full bg-gray-200"></div>
-            <p className="text-sm text-gray-500/90">{project.year}</p>
+            <div className="h-0.25 w-full bg-gray-200 dark:bg-white/10"></div>
+            <p className="text-sm text-gray-500/90 dark:text-gray-400/90">{project.year}</p>
           </a>
         ))}
       </div>

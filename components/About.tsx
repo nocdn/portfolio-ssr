@@ -11,7 +11,7 @@ export const AboutDesktop = () => {
     >
       <div>
         Hey there, I'm{" "}
-        <Suspense fallback={<span className="text-blue-600">Bartek</span>}>
+        <Suspense fallback={<span className="text-blue-600 dark:text-blue-400">Bartek</span>}>
           <TimeZoneName />
         </Suspense>
         . I am a software engineer based in the UK, studying computer science at the University of
@@ -25,7 +25,7 @@ export const AboutDesktop = () => {
               href="https://x.com/nocdns"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[18.5px] text-blue-600"
+              className="text-[18.5px] text-blue-600 dark:text-blue-400"
             >
               Twitter
             </a>
@@ -34,7 +34,7 @@ export const AboutDesktop = () => {
           <TwitterHover />
         </Suspense>
         , reach me via <br />
-        <a href="mailto:contact@bartoszbak.org" className="text-blue-600">
+        <a href="mailto:contact@bartoszbak.org" className="text-blue-600 dark:text-blue-400">
           email
         </a>{" "}
         or see my other code on{" "}
@@ -42,7 +42,7 @@ export const AboutDesktop = () => {
           href="https://github.com/nocdn"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-lg text-blue-600"
+          className="text-lg text-blue-600 dark:text-blue-400"
         >
           GitHub
         </a>
@@ -56,8 +56,8 @@ export const AboutMobile = () => {
   return (
     <SectionMobile id="about" title="ABOUT">
       <div className="leading-[1.6]">
-        Hello, I'm <span className="text-blue-600">Bartek</span>, a software engineer based in the
-        UK, studying <span className="text-blue-600">computer science</span> at the University of
+        Hello, I'm <span className="text-blue-600 dark:text-blue-400">Bartek</span>, a software engineer based in the
+        UK, studying <span className="text-blue-600 dark:text-blue-400">computer science</span> at the University of
         York. I'm currently exploring typography, web animations and crafting interactions.
       </div>
     </SectionMobile>

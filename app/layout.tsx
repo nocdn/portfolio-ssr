@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { Geist, Geist_Mono, Inter, JetBrains_Mono } from "next/font/google"
 import localFont from "next/font/local"
+import { ThemeScript } from "@/components/ThemeScript"
+import { ThemeToggle } from "@/components/ThemeToggle"
 import "./globals.css"
 
 const geistSans = Geist({
@@ -101,8 +103,9 @@ export default function RootLayout({
     image: "https://ssr.bartoszbak.org/opengraph-image",
   }
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <ThemeScript />
         <script
           type="application/ld+json"
           // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
@@ -115,6 +118,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${jetBrainsMono.variable} ${ioskeleyMono.variable} ${switzer.variable} ${ppNeueMontreal.variable} bg-background antialiased`}
       >
         {children}
+        <ThemeToggle />
       </body>
     </html>
   )

@@ -125,7 +125,7 @@ export function TimeZoneName() {
   return (
     <div className="relative inline-block">
       <motion.span
-        className="text-blue-600"
+        className="text-blue-600 dark:text-blue-400"
         onMouseEnter={() => setHoveringName(true)}
         onMouseLeave={() => setHoveringName(false)}
         style={{
@@ -178,7 +178,7 @@ export function TimeZoneName() {
               filter: "blur(1px)",
               transition: { duration: 0.15 },
             }}
-            className="font-inter pointer-events-none absolute top-1/2 left-[calc(50%-1px)] -translate-x-1/2 -translate-y-1/2 text-[16px] font-semibold text-blue-600/75 select-none"
+            className="font-inter pointer-events-none absolute top-1/2 left-[calc(50%-1px)] -translate-x-1/2 -translate-y-1/2 text-[16px] font-semibold text-blue-600/75 dark:text-blue-400/75 select-none"
             style={{ opacity: 0.1 }}
           >
             UTC
@@ -204,7 +204,7 @@ export function TimeZoneName() {
               scale: 0.7,
               transition: { duration: 0.15 },
             }}
-            className="font-inter pointer-events-none absolute top-1/2 left-[calc(50%-1px)] -translate-x-1/2 -translate-y-1/2 text-[16px] font-semibold text-blue-600 select-none"
+            className="font-inter pointer-events-none absolute top-1/2 left-[calc(50%-1px)] -translate-x-1/2 -translate-y-1/2 text-[16px] font-semibold text-blue-600 dark:text-blue-400 select-none"
             style={{ opacity: 0.1 }}
           >
             <AlarmClockIcon

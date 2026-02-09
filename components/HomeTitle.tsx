@@ -17,7 +17,7 @@ export function HomeTitle({ index, onClick, title, count, motionDelay }: HomeTit
     >
       <p>{title}</p>
       {count && (
-        <span className="font-geist-mono absolute -top-1 -right-4.5 rounded-full px-2 py-0.5 text-xs font-semibold text-gray-500">
+        <span className="font-geist-mono absolute -top-1 -right-4.5 rounded-full px-2 py-0.5 text-xs font-semibold text-gray-500 dark:text-gray-400">
           {count}
         </span>
       )}

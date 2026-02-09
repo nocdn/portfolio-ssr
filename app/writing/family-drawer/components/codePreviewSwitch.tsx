@@ -47,13 +47,15 @@ export function CodePreviewSwitch({
     <div className="border-shadow flex flex-col rounded-xl">
       <div
         id="header"
-        className="flex h-18 items-center justify-between gap-3 border-b border-gray-200 px-4"
+        className="flex h-18 items-center justify-between gap-3 border-b border-gray-200 px-4 dark:border-white/8"
       >
         <button
           onMouseDown={() => setSelected("preview")}
           className={cn(
             "w-full cursor-pointer rounded-full py-2 transition-all duration-100 select-none active:scale-99",
-            selected === "preview" ? "bg-[#323137] text-white" : "bg-[#E3E3E3]"
+            selected === "preview"
+              ? "bg-[#323137] text-white"
+              : "bg-[#E3E3E3] dark:bg-white/8 dark:text-gray-400"
           )}
         >
           Preview
@@ -62,7 +64,9 @@ export function CodePreviewSwitch({
           onMouseDown={() => setSelected("code")}
           className={cn(
             "w-full cursor-pointer rounded-full py-2 transition-all duration-100 select-none active:scale-99",
-            selected === "code" ? "bg-[#323137] text-white" : "bg-[#E3E3E3]"
+            selected === "code"
+              ? "bg-[#323137] text-white"
+              : "bg-[#E3E3E3] dark:bg-white/8 dark:text-gray-400"
           )}
         >
           Code
