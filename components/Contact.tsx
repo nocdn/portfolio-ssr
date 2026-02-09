@@ -1,5 +1,6 @@
 "use client"
 
+import { Check, Copy, ExternalLink } from "lucide-react"
 import { useState } from "react"
 import { SectionMobile } from "./Section"
 
@@ -44,11 +45,24 @@ export function ContactMobile() {
               >
                 <p className="flex-nowrap text-[17px] whitespace-nowrap">{item.title}</p>
                 <div className="h-0.25 w-full bg-gray-200"></div>
-                <p
-                  className={`font-pp-neue-montreal text-[16px] ${copied ? "text-blue-600" : "text-gray-500/90"}`}
-                >
-                  {copied ? "Copied" : item.action}
-                </p>
+                <div className="flex items-center gap-1">
+                  <p
+                    className={`font-inter text-[16px] font-[530] ${copied ? "text-blue-600" : "text-gray-500/90"}`}
+                  >
+                    {copied ? "Copied" : item.action}
+                  </p>
+                  {copied ? (
+                    <Check
+                      className="mr-[1.5px] ml-1.5 h-3.5 w-3.5 text-blue-600"
+                      strokeWidth={2.75}
+                    />
+                  ) : (
+                    <Copy
+                      className="mr-[1.5px] ml-1.5 h-3.5 w-3.5 text-gray-500/90"
+                      strokeWidth={2.75}
+                    />
+                  )}
+                </div>
               </button>
             )
           }
@@ -63,14 +77,15 @@ export function ContactMobile() {
             >
               <p className="flex-nowrap text-[17px] whitespace-nowrap">{item.title}</p>
               <div className="h-0.25 w-full bg-gray-200"></div>
-              <p className="font-pp-neue-montreal text-[16px] text-gray-500/90">{item.action}</p>
+              <div className="flex items-center gap-1">
+                <p className="font-inter text-[16px] font-[530] text-gray-500/90">{item.action}</p>
+                <ExternalLink className="ml-1.5 h-3.5 w-3.5 text-gray-500/90" strokeWidth={2.75} />
+              </div>
             </a>
           )
         })}
       </div>
-      <p className="mt-4 font-sans text-[15px] text-gray-500">
-        Feel free to reach out at any point about anything
-      </p>
+      <p className="mt-4 font-sans text-[15.5px] text-gray-500">Thanks for visiting!</p>
     </SectionMobile>
   )
 }

@@ -48,10 +48,10 @@ export const AboutDesktop = () => {
 export const AboutMobile = () => {
   return (
     <SectionMobile id="about" title="ABOUT">
-      <div>
+      <div className="leading-[1.6]">
         Hello, I'm <span className="text-blue-600">Bartek</span>, a software engineer based in the
-        UK, studying computer science at the University of York. I'm currently exploring typography,
-        web animations and crafting interactions.
+        UK, studying <span className="text-blue-600">computer science</span> at the University of
+        York. I'm currently exploring typography, web animations and crafting interactions.
       </div>
     </SectionMobile>
   )
