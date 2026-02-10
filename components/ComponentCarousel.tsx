@@ -24,7 +24,8 @@ const DESKTOP_CARD_ANIMATION = {
 } as const
 
 function DesktopCardImage({ card }: { card: ComponentCard }) {
-  const className = "w-[200px] h-[100px] rounded-xl border border-gray-200 dark:border-white/10 object-contain"
+  const className =
+    "w-[200px] h-[100px] rounded-xl border border-gray-200 dark:border-white/10 object-contain bg-white"
 
   if (card.useNextImage) {
     return (
@@ -39,7 +40,7 @@ function DesktopCardImage({ card }: { card: ComponentCard }) {
           alt={card.alt}
           width={200}
           height={100}
-          className={`${className} bg-white dark:bg-white/5 px-8 py-4`}
+          className={`${className} px-8 py-4`}
           loading="lazy"
           priority={false}
         />
@@ -124,7 +125,8 @@ const MOBILE_SPRING_CONFIG = {
 }
 
 function MobileCardImage({ card }: { card: ComponentCard }) {
-  const className = "w-full aspect-[2/1] rounded-xl border-[1.5px] border-gray-200 dark:border-white/10 object-contain"
+  const className =
+    "w-full aspect-[2/1] rounded-xl border-[1.5px] border-gray-200 dark:border-white/10 object-contain bg-white"
 
   if (card.useNextImage) {
     return (
@@ -133,7 +135,7 @@ function MobileCardImage({ card }: { card: ComponentCard }) {
         alt={card.alt}
         width={400}
         height={200}
-        className={`${className} bg-white dark:bg-white/5 px-8 py-4`}
+        className={`${className} bg-white px-8 py-4`}
         draggable={false}
         loading="lazy"
         priority={false}
@@ -239,7 +241,9 @@ export function MobileComponentCarousel() {
           <div
             key={i}
             className={`h-1.5 rounded-full transition-all duration-200 ${
-              i === currentIndex ? "w-4 bg-gray-500 dark:bg-gray-400" : "w-1.5 bg-gray-300 dark:bg-gray-600"
+              i === currentIndex
+                ? "w-4 bg-gray-500 dark:bg-gray-400"
+                : "w-1.5 bg-gray-300 dark:bg-gray-600"
             }`}
           />
         ))}

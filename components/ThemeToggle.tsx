@@ -37,7 +37,7 @@ export function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label="Toggle theme"
-      className="fixed right-5 bottom-5 z-50 flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-gray-200 bg-white/80 backdrop-blur-sm transition-colors duration-200 hover:bg-gray-100 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10 md:right-6 md:bottom-6"
+      className="fixed right-6 bottom-6 z-50 hidden h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-gray-200 bg-white/80 backdrop-blur-sm transition-colors duration-200 hover:bg-gray-100 md:flex dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
     >
       <AnimatePresence mode="wait" initial={false}>
         {isDark ? (

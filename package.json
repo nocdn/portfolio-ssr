@@ -14,7 +14,7 @@
     "class-variance-authority": "latest",
     "clsx": "latest",
     "lucide-react": "latest",
-    "motion": "^12.33.0",
+    "motion": "^12.34.0",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
