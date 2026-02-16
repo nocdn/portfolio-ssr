@@ -18,11 +18,11 @@ export const ProjectDesktop = ({
       className={`${className} group/item relative inline-block cursor-pointer py-0.5 transition-opacity duration-100 group-hover:opacity-30 hover:opacity-100! hover:duration-0 focus:outline-none`}
     >
       <div className="font-pp-neue-montreal relative z-10 flex items-center gap-3 text-[17px] leading-8 font-medium">
-        <p className="group-hover/item:text-blue-600 group-hover/item:drop-shadow-[0_0_0.7px_rgba(59,130,246,0.35)] dark:group-hover/item:text-blue-400 dark:group-hover/item:drop-shadow-[0_0_0.7px_rgba(96,165,250,0.35)]">
+        <p className="text-gray-800/90 group-hover/item:text-blue-600 group-hover/item:drop-shadow-[0_0_0.7px_rgba(59,130,246,0.35)] dark:group-hover/item:text-blue-400 dark:group-hover/item:drop-shadow-[0_0_0.7px_rgba(96,165,250,0.35)]">
           {title}
         </p>
         {description && (
-          <p className="font-switzer text-[17px] font-medium text-gray-500/90 group-hover:text-gray-700 dark:text-gray-400/90 dark:group-hover:text-gray-300">
+          <p className="font-switzer text-[17px] font-medium text-gray-500/90 antialiased group-hover:text-gray-700 dark:text-gray-400/90 dark:group-hover:text-gray-300">
             {description}
           </p>
         )}

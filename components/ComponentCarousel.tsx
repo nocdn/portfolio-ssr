@@ -67,7 +67,7 @@ function DesktopCardContent({ card }: { card: ComponentCard }) {
         href={card.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="font-inter self-start text-[16.5px]"
+        className="font-inter self-start text-[16.5px] antialiased"
       >
         {card.title}
       </a>

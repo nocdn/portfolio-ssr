@@ -7,7 +7,7 @@ export const AboutDesktop = () => {
   return (
     <SectionDesktop
       title="ABOUT"
-      className="motion-blur-in-[2px] motion-opacity-in-0 motion-translate-y-in-[7%] group"
+      className="motion-blur-in-[2px] motion-opacity-in-0 motion-translate-y-in-[7%] group antialiased"
     >
       <div>
         Hey there, I'm{" "}
@@ -56,9 +56,10 @@ export const AboutMobile = () => {
   return (
     <SectionMobile id="about" title="ABOUT">
       <div className="leading-[1.6]">
-        Hello, I'm <span className="text-blue-600 dark:text-blue-400">Bartek</span>, a software engineer based in the
-        UK, studying <span className="text-blue-600 dark:text-blue-400">computer science</span> at the University of
-        York. I'm currently exploring typography, web animations and crafting interactions.
+        Hello, I'm <span className="text-blue-600 dark:text-blue-400">Bartek</span>, a software
+        engineer based in the UK, studying{" "}
+        <span className="text-blue-600 dark:text-blue-400">computer science</span> at the University
+        of York. I'm currently exploring typography, web animations and crafting interactions.
       </div>
     </SectionMobile>
   )

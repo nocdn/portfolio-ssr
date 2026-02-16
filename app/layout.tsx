@@ -1,8 +1,7 @@
+import { ThemeScript } from "@/components/ThemeScript"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono, Inter, JetBrains_Mono } from "next/font/google"
 import localFont from "next/font/local"
-import { ThemeScript } from "@/components/ThemeScript"
-import { ThemeToggle } from "@/components/ThemeToggle"
 import "./globals.css"
 
 const geistSans = Geist({
@@ -115,10 +114,9 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${jetBrainsMono.variable} ${ioskeleyMono.variable} ${switzer.variable} ${ppNeueMontreal.variable} bg-background antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${jetBrainsMono.variable} ${ioskeleyMono.variable} ${switzer.variable} ${ppNeueMontreal.variable} bg-background`}
       >
         {children}
-        <ThemeToggle />
       </body>
     </html>
   )
