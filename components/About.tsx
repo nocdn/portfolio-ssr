@@ -1,7 +1,8 @@
 import { Suspense } from "react"
+import { EmailCopy } from "./EmailCopy"
 import { SectionDesktop, SectionMobile } from "./Section"
 import { TimeZoneName } from "./TimeZoneName"
-import { TwitterHover } from "./TwitterHover"
+import { TwitterCard } from "./TwitterCard"
 
 export const AboutDesktop = () => {
   return (
@@ -31,12 +32,16 @@ export const AboutDesktop = () => {
             </a>
           }
         >
-          <TwitterHover />
+          <TwitterCard />
         </Suspense>
         , reach me via <br />
-        <a href="mailto:contact@bartoszbak.org" className="text-blue-600 dark:text-blue-400">
-          email
-        </a>{" "}
+        <Suspense
+          fallback={
+            <span className="text-blue-600 dark:text-blue-400">email</span>
+          }
+        >
+          <EmailCopy />
+        </Suspense>{" "}
         or see my other code on{" "}
         <a
           href="https://github.com/nocdn"
