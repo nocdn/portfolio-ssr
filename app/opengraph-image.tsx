@@ -3,100 +3,149 @@ import { readFile } from "node:fs/promises"
 import { join } from "node:path"
 
 export const alt = "Bartosz Bak - Design Engineer"
-export const size = { width: 1200, height: 630 }
+
+export const size = {
+  width: 1200,
+  height: 630,
+}
+
 export const contentType = "image/png"
 
 export default async function Image() {
-  const nameText = "Bartosz Bak"
-  const titleText = "Design Engineer"
-
-  const [interSemiBold, openRundeMedium] = await Promise.all([
-    readFile(join(process.cwd(), "app/fonts/Inter-SemiBold.ttf")),
-    readFile(join(process.cwd(), "app/fonts/OpenRunde-Medium.otf")),
-  ])
+  const overusedGroteskData = await readFile(
+    join(process.cwd(), "app/fonts/OverusedGrotesk-SemiBold.otf")
+  )
+  const ioskeleyMonoBoldData = await readFile(
+    join(process.cwd(), "app/fonts/IoskeleyMono-Bold.ttf")
+  )
 
   return new ImageResponse(
     <div
       style={{
-        background: "#fafafa",
         width: "100%",
         height: "100%",
         display: "flex",
-        padding: 60,
-        position: "relative",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "#000000",
+        padding: 0,
       }}
     >
-      {/* Top left - Name and title */}
       <div
         style={{
+          width: "100%",
+          height: "100%",
           display: "flex",
           flexDirection: "column",
+          backgroundColor: "#3257D1",
+          padding: "16px 40px 32px 40px",
+          boxShadow:
+            "0px 0px 0px 1px rgba(0, 0, 0, 0.06), 0px 1px 2px -1px rgba(0, 0, 0, 0.06), 0px 2px 4px 0px rgba(0, 0, 0, 0.04)",
         }}
       >
+        {/* BARTOSZ */}
         <div
           style={{
-            color: "#0a0a0a",
-            fontSize: 72,
-            fontFamily: "Inter",
+            display: "flex",
+            fontFamily: "OverusedGrotesk",
+            fontSize: 144,
             fontWeight: 600,
+            letterSpacing: "0.03em",
+            color: "#FEF5E2",
+            lineHeight: 1,
           }}
         >
-          {nameText}
+          BARTOSZ
         </div>
+
+        {/* BAK */}
         <div
           style={{
-            color: "#71717a",
-            fontSize: 40,
-            fontFamily: "OpenRunde",
-            fontWeight: 500,
-            marginTop: 12,
-            textShadow: "0 0 0.5px #71717a",
+            display: "flex",
+            width: "100%",
+            fontFamily: "OverusedGrotesk",
+            fontSize: 144,
+            fontWeight: 600,
+            letterSpacing: "0.03em",
+            color: "#FEF5E2",
+            lineHeight: 1,
           }}
         >
-          {titleText}
+          BAK
         </div>
-      </div>
 
-      {/* Bottom right - Sprout SVG */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: 60,
-          right: 60,
-          display: "flex",
-        }}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="84"
-          height="84"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#0a0a0a"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+        {/* DESIGN - right aligned */}
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "flex-end",
+            fontFamily: "IoskeleyMono",
+            fontSize: 144,
+            fontWeight: 700,
+            color: "#FEF5E2",
+            lineHeight: 1,
+          }}
         >
-          <path d="M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3" />
-          <path d="M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4" />
-          <path d="M5 21h14" />
-        </svg>
+          DESIGN
+        </div>
+
+        {/* Bottom row: UOY STUDENT + ENGINEER */}
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            alignItems: "flex-end",
+            justifyContent: "space-between",
+            flex: 1,
+          }}
+        >
+          {/* UOY STUDENT */}
+          <div
+            style={{
+              display: "flex",
+              fontFamily: "IoskeleyMono",
+              fontSize: 40,
+              fontWeight: 700,
+              color: "#FEF5E2",
+              opacity: 0.7,
+              marginBottom: 8,
+              marginLeft: 8,
+            }}
+          >
+            UOY STUDENT
+          </div>
+
+          {/* ENGINEER */}
+          <div
+            style={{
+              display: "flex",
+              fontFamily: "IoskeleyMono",
+              fontSize: 144,
+              fontWeight: 700,
+              color: "#FEF5E2",
+              lineHeight: 1,
+            }}
+          >
+            ENGINEER
+          </div>
+        </div>
       </div>
     </div>,
     {
       ...size,
       fonts: [
         {
-          name: "Inter",
-          data: interSemiBold,
-          style: "normal" as const,
+          name: "OverusedGrotesk",
+          data: overusedGroteskData,
+          style: "normal",
           weight: 600,
         },
         {
-          name: "OpenRunde",
-          data: openRundeMedium,
-          style: "normal" as const,
-          weight: 500,
+          name: "IoskeleyMono",
+          data: ioskeleyMonoBoldData,
+          style: "normal",
+          weight: 700,
         },
       ],
     }
