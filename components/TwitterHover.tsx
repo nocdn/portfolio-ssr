@@ -29,18 +29,24 @@ export function TwitterHover({ profile }: { profile: TwitterProfile }) {
                 render={
                   <motion.div
                     style={{ willChange: "transform, opacity, filter" }}
-                    initial={{ opacity: 0.2, scale: 0.92, filter: "blur(2px)" }}
+                    initial={{ opacity: 0.2, scale: 0.82, filter: "blur(2px)" }}
                     animate={{
                       opacity: 1,
                       scale: 1,
                       filter: "blur(0px)",
-                      transition: { ease: [0.165, 0.84, 0.2, 1] },
+                      transition: {
+                        ease: [0.165, 0.84, 0.2, 1],
+                        opacity: { duration: 0.13, ease: [0.165, 0.84, 0.2, 1] },
+                      },
                     }}
                     exit={{
                       opacity: 0,
-                      scale: 0.96,
+                      scale: 0.86,
                       filter: "blur(2px)",
-                      transition: { ease: [0.19, 1, 0.22, 1] },
+                      transition: {
+                        ease: [0.19, 1, 0.22, 1],
+                        opacity: { duration: 0.25, ease: [0.19, 1, 0.22, 1] },
+                      },
                     }}
                   />
                 }
